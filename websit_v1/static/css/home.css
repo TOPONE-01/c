@@ -1,0 +1,217 @@
+body {
+    background-image: radial-gradient(circle, rgb(74, 176, 108), rgb(148, 145, 145), rgb(48, 48, 89));
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    align-items: center;
+    padding: 40px;
+    margin-top: 10px;
+    background-image: radial-gradient(circle, rgb(74, 176, 108), rgb(56, 174, 210), rgb(96, 128, 132));
+    border-radius: 25px;
+    margin-bottom: 10px;
+    box-shadow: inset 0 0 5px 0px;
+}
+
+#header-container{
+    width: 100%;
+    display: flex;
+    align-content: space-around;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: baseline;
+    margin-top: -8px;
+}
+
+#header-container-r{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+
+
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+a{
+
+    background-color: rgb(88, 88, 88);
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    resize: vertical;
+    border-radius: 25px;
+
+}
+
+textarea {
+    width: 100%;
+    height: 50px;
+    padding: 15px;
+    text-align: right;
+    resize: vertical;
+    border-radius: 25px;
+}
+
+#add_post{
+    display: flex;
+    align-items: flex-end;
+}
+
+
+button {
+    padding: 10px 20px;
+    background-image: linear-gradient(to right, #222fc4, #a621ed);  
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-left: 8px;
+
+}
+
+button:hover{
+    background-image: linear-gradient(to right, #233f52, #4f962e);  
+
+}
+
+#posts {
+    margin-top: 20px;
+}
+
+.post {
+    background-color: #ffffff53;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 25px;
+}
+
+.post-content {
+    margin-bottom: 10px;
+    border-radius: 25px;
+}
+
+.post-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    
+}
+
+.like-button {
+    margin-right: 10px;
+    color: #333;
+    cursor: pointer;
+}
+
+.post-comments {
+    margin-top: 10px;
+}
+
+#div-post{
+    margin-bottom: 5px;
+    width: max-content;
+    display: flex;
+    text-align: right;
+    padding: 10px;
+    align-items: end;
+    margin-left: auto;
+    margin-top: 4px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-start-start-radius: 25px;
+    background-image: radial-gradient(circle,  rgb(122, 173, 151), rgb(149, 182, 171));
+    overflow: auto;
+    word-wrap: break-word;
+    max-width: 98%;
+    white-space: pre-wrap; /* عرض النص في سطر جديد إذا طال */
+}
+
+.comment {
+    margin-bottom: 5px;
+    width: max-content;
+    display: flex;
+    padding: 10px;
+    margin-top: 4px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-right-radius: 25px;
+    background-image: radial-gradient(circle,  rgb(136, 134, 177), rgb(87, 140, 180));
+    overflow: auto;
+    overflow: auto;
+    word-wrap: break-word;
+    max-width: 98%;
+    white-space: pre-wrap; /* عرض النص في سطر جديد إذا طال */
+}
+
+.comment-list li {
+    list-style-type: none; /* حذف العلامة */
+}
+
+
+.comment-list {
+    margin-bottom: 5px;
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 4px;
+    border-radius: 25px;
+    overflow: auto;
+    max-width: 400px;
+}
+
+.comment-name {
+    font-weight: bold;
+}
+
+.comment-text {
+    margin-top: 10px;
+}
+    .read-more {
+        width: max-content;
+        margin-top: 100px;
+        text-align: right;
+        align-items: end;
+        background-color: rgb(36, 34, 34);
+        color: #fff;
+        text-decoration: none;
+        padding: 1px;
+        border-radius: 5px;
+    }
+    
+    .read-more:hover {
+        background-color: rgb(0, 0, 0);
+    }
+
+    .toggle-comment{
+        background-color: #615f5f;
+    }
+
+#add_comments{
+   border-radius: 25px; 
+   padding: 8px; border: none; 
+   background-color: rgb(36, 220, 134); 
+   margin-left: 8px;
+}
+
+#add_comments:hover{
+    
+    background-color: rgb(36, 131, 220); 
+ }

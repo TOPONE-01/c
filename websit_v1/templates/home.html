@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="{{ url_for('static', filename='icons/caht.jpg') }}">
+    <title>الصفحة الرئيسية</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/home.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/header.css') }}">
+</head>
+
+<body>
+    <div id="header">
+        <div id="header-r">
+            <form style="margin-top: 10px;" id="redirectForm" action="/profile" method="POST">
+            <input type="image" style="border-radius: 25px; margin-left: 8px; width: 60px; margin-top:15px; height: 60px; display: flex;"
+                src="{{ url_for('static', filename='icons/kid_5294712.png') }}">
+
+            </form>
+            <h2 style=" font-family: 'Billabong', cursive;     
+                         background-image: linear-gradient(to right, #2534ff, #313228, #ed2121);  
+                         -webkit-background-clip: text; 
+                        -webkit-text-fill-color: transparent; margin-left: 10px; font-size: 18px; margin-top:20px;">{{
+                name }}</h2>
+        </div>
+        <div id="header-m">
+            <h2 style="margin-top:30px; 
+                         font-family: 'Billabong', cursive;     
+                         background-image: linear-gradient(to right, #25ff80, #2369d8, #a621ed);  
+                         -webkit-background-clip: text; 
+                        -webkit-text-fill-color: transparent;">ShareHub</h2>
+        </div>
+        <div id="header-l">
+            <form id="redirectForm" action="/index" method="POST">
+                <input type="image" style="margin-left:  8px; width: 90px; height: 90px; display: flex; margin-top: 35px;"
+                    src="{{ url_for('static', filename='icons/caht.jpg') }}">
+                <div style="margin-top:  8px; margin-left: 8px;">
+                    </div>
+            </form>
+    
+                <button onclick="redirectToCreateAccount()">انشاء حساب جديد</button>
+                <button onclick="redirectToLogout()">تسجيل خروج</button>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="header-container">
+
+
+            <div id="header-container-r">
+                <form id="redirectForm" action="/information" method="POST">
+                    <input type="image" src="{{ url_for('static', filename='icons/info.png') }}" style="margin-right: -10px; width: 50px; height: 50px; float: left;">
+                  </form>
+                  <form id="redirectForm" action="/friends" method="POST">
+                    <input type="image" src="{{ url_for('static', filename='icons/frinds.png') }}" style="margin-left: 25px; width: 50px; height: 50px; float: left;">
+                  </form>
+            </div>
+              
+
+            <div  style="display: flex; justify-content: flex-start; align-items: center; flex-direction: row; align-content: space-around;">
+                <form style="margin-top: 18px;" id="redirectForm" action="/profile" method="POST">
+                    <input type="image" style="border-radius: 25px; margin-top: -40px; width: 50px; height: 50px; float: left;"
+                        src="{{ url_for('static', filename='icons/kid_5294712.png') }}">
+
+                </form>
+                    <p style="                         
+                        font-family: 'Billabong', cursive;     
+                        background-image: linear-gradient(to right, #070d51, #191a1b, #a621ed);  
+                        -webkit-background-clip: text; 
+                        -webkit-text-fill-color: transparent; text-align: left; margin-left: 4px;  margin-top: -12px; margin-bottom: 30px;">
+                    {{ name }}</p>
+            </div>
+
+        </div>
+
+
+        <form id="add_post" action="/add_post" method="post">
+            <textarea name="post_content" placeholder="أضف منشورًا"></textarea>
+            <button type="submit">نشر</button>
+        </form>
+        <div id="posts">
+            {% for post in posts %}
+            <div class="post">
+
+                <div id="div-post">
+                    <ul class="comment-list">
+
+                        <img style="margin-left: auto; 
+                                    width: 40px;
+                                    margin-top: -8px;
+                                    margin-bottom: 10px;
+                                    " src="{{ url_for('static', filename='icons/kid_5294712.png') }}">
+
+                        <li class="comment-name">المنشور بواسطة: {{post['username']}}</li>
+                        <li class="comment-text">{{ post['post_content'] }}</li>
+                    </ul>
+                </div>
+
+                <div>
+                        {% if post['comments'] %}
+                        <a class="toggle-comment read-more" onclick="toggleComment(this)">عرض/إخفاء التعليقات</a>
+                        <div class="comments hidden">
+                            {% for comment in post['comments'] %}
+                            <div class="comment">
+                                <ul class="comment-list">
+        
+                                    <img style="margin-left: 0; 
+                                    width: 40px;
+                                    margin-top: -8px;
+                                    margin-bottom: 10px;
+                                    " src="{{ url_for('static', filename='icons/user.png') }}">
+        
+                                    <li class="comment-name">تعليق بواسطة: {{comment['username']}}</li>
+                                    <li class="comment-text">{{comment['comment_content']}}</li>
+                                </ul>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+        
+                    <form style="display: flex; align-items: flex-end;" action="/add_comment" method="post">
+                        <input type="hidden" name="username" value="{{ name }}">
+                        <input type="hidden" name="post_content" value="{{ post['post_content'] }}">
+                        <textarea
+                            style="border-radius: 25px; border: none; width: 88%; margin-top: 8px; height: 16px; background-color: rgb(247, 247, 247);"
+                            type="text" name="comment" placeholder="أضف تعليقًا"></textarea>
+                        <input id="add_comments" type="submit" value="أضف تعليق">
+                    </form>
+                </div>
+
+
+
+
+            {% endfor %}
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+#header{
+    width: 99.9%;
+    display: flex;
+    height: 80px;
+    margin-top: -10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(44, 43, 41);
+    background-image: radial-gradient(circle, rgb(127, 127, 131), rgb(138, 138, 133), rgb(126, 152, 166));
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+
+}
+
+#header-r{
+    float: left;
+    display: flex;
+    text-align: center;
+    align-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 15px;
+
+
+}
+
+#header-m{
+    text-align: center;
+}
+
+#header-l{
+    text-align: right;
+    float: left;
+    display: flex;
+    text-align: center;
+    align-content: space-around;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+
